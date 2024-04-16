@@ -1,32 +1,23 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
-const MyComponent: React.FC = () => {
-  // Create a ref for the input element
-  const inputRef = useRef<HTMLInputElement>(null);
+const Counter: React.FC = () => {
+    const ref = useRef(0);
+    console.log('ref: ', ref);
 
-  // Focus on the input field when the component mounts
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
+    function handleClick() {
+        ref.current = ref.current + 1;
+        alert('You clicked ' + ref.current + ' times!');
     }
-  }, []);
 
-  // Set a value that persists across renders
-  const persistedValue = useRef<string>('initialValue');
-
-  return (
-    <div>
-      {/* Input field */}
-      <input ref={inputRef} type="text" />
-
-      {/* Display the persisted value */}
-      <p>Persisted Value: {persistedValue.current}</p>
-    </div>
-  );
-};
+    return (
+        <button onClick={handleClick}>
+            Click me!
+        </button>
+    );
+}
 
 const UseRef: React.FC = () => {
-    return <MyComponent />;
+    return <Counter />;
 };
 
 export default UseRef;
