@@ -1,0 +1,3 @@
+useReducer is another hook in React used for state management. It's an alternative to useState that is more suitable for managing complex state logic in your components. While useState is simpler and works well for most cases, useReducer is more powerful and flexible, especially when dealing with state transitions that depend on the previous state or when the next state depends on multiple previous states.
+
+useReducer takes in a reducer function and an initial state. It returns the current state and a dispatch function to dispatch actions to update the state. Actions are objects that describe the type of state change to make.

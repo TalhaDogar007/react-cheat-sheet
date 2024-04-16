@@ -1,0 +1,1 @@
+useRef is a hook in React used to create a mutable ref object. The ref object persists for the entire lifetime of the component and allows you to access the DOM nodes directly, store mutable values, or persist values between renders without causing re-renders.
